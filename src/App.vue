@@ -10,14 +10,14 @@
       <input
         type="number"
         v-model.number="amount"
-        placeholder="Unesite iznos"
+        placeholder="Enter amount"
         required
       />
 
       <!-- From Currency Select + Flag -->
       <div class="select-group">
         <select v-model="fromCurrency" required>
-          <option disabled value="">Izaberite valutu od</option>
+          <option disabled value="">Select currency from</option>
           <option v-for="currency in currencies" :key="currency" :value="currency">
             {{ currency }}
           </option>
@@ -28,7 +28,7 @@
       <!-- To Currency Select + Flag -->
       <div class="select-group">
         <select v-model="toCurrency" required>
-          <option disabled value="">Izaberite valutu u</option>
+          <option disabled value="">Select currency to</option>
           <option v-for="currency in currencies" :key="currency" :value="currency">
             {{ currency }}
           </option>
@@ -37,18 +37,18 @@
       </div>
 
       <!-- Buttons: Convert and Swap -->
-      <button type="submit">Konvertuj</button>
+      <button type="submit">Convert</button>
       <button type="button" @click="swapCurrencies" class="swap-btn">↔ Change Currency</button>
     </form>
 
     <!-- Conversion Result -->
     <div v-if="result !== null" class="result">
-      Rezultat: {{ result }}
+      Result: {{ result }}
     </div>
 
     <!-- Conversion History List -->
     <div v-if="history.length" class="history">
-      <h2>Istorija konverzija:</h2>
+      <h2>Conversion History:</h2>
       <ul>
         <li v-for="(item, index) in history" :key="index">
           <img :src="getFlagUrl(item.from)" alt="flag" class="flag" />
@@ -60,6 +60,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
