@@ -3,43 +3,40 @@
     <!-- App Title -->
     <h1>Currency Converter</h1>
 
-    <!-- Currency Conversion Form -->
     <form @submit.prevent="convertCurrency">
-      
-      <!-- Amount Input -->
-      <input
-        type="number"
-        v-model.number="amount"
-        placeholder="Enter amount"
-        required
-      />
 
-      <!-- From Currency Select + Flag -->
-      <div class="select-group">
-        <select v-model="fromCurrency" required>
-          <option disabled value="">Select currency from</option>
-          <option v-for="currency in currencies" :key="currency" :value="currency">
-            {{ currency }}
-          </option>
-        </select>
-        <img :src="getFlagUrl(fromCurrency)" alt="flag" class="flag" />
-      </div>
+  <!-- Amount Input -->
+  <input
+    type="number"
+    v-model.number="amount"
+    required
+  />
 
-      <!-- To Currency Select + Flag -->
-      <div class="select-group">
-        <select v-model="toCurrency" required>
-          <option disabled value="">Select currency to</option>
-          <option v-for="currency in currencies" :key="currency" :value="currency">
-            {{ currency }}
-          </option>
-        </select>
-        <img :src="getFlagUrl(toCurrency)" alt="flag" class="flag" />
-      </div>
+  <!-- From Currency Select + Flag -->
+  <div class="select-group">
+    <select v-model="fromCurrency" required>
+      <option v-for="currency in currencies" :key="currency" :value="currency">
+        {{ currency }}
+      </option>
+    </select>
+    <img :src="getFlagUrl(fromCurrency)" alt="flag" class="flag" />
+  </div>
 
-      <!-- Buttons: Convert and Swap -->
-      <button type="submit">Convert</button>
-      <button type="button" @click="swapCurrencies" class="swap-btn">↔ Change Currency</button>
-    </form>
+  <!-- To Currency Select + Flag -->
+  <div class="select-group">
+    <select v-model="toCurrency" required>
+      <option v-for="currency in currencies" :key="currency" :value="currency">
+        {{ currency }}
+      </option>
+    </select>
+    <img :src="getFlagUrl(toCurrency)" alt="flag" class="flag" />
+  </div>
+
+  <!-- Buttons: Convert and Swap -->
+  <button type="submit">Convert</button>
+  <button type="button" @click="swapCurrencies" class="swap-btn">↔ Swap Currencies</button>
+</form>
+
 
     <!-- Conversion Result -->
     <div v-if="result !== null" class="result">
