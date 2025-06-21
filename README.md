@@ -53,6 +53,13 @@ It's not meant to be a production-grade app, but a practical exercise that helpe
 
 ![Currency Converter Screenshot](./screenshot.png)
 
+## 📸 Screenshots:
+
+https://github.com/n-kojevic/Currency-converter-app/blob/main/MacBook%20Pro-1750506566267.jpeg?raw=true
+
+https://github.com/n-kojevic/Currency-converter-app/blob/main/iPad-1750506568056.jpeg?raw=true
+
+
 ---
 
 ## Setup Instructions
